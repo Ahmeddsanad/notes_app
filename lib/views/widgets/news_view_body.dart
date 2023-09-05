@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_app_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/views/widgets/custom_note_item.dart';
 
 class NewsViewBody extends StatelessWidget {
   const NewsViewBody({
@@ -17,6 +19,7 @@ class NewsViewBody extends StatelessWidget {
         child: Column(
           children: [
             CutomAppBar(),
+            NoteItem(),
           ],
         ),
       ),
