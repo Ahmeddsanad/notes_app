@@ -20,7 +20,10 @@ class NewsViewBody extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            CutomAppBar(),
+            CustomAppBar(
+              text: 'Notes',
+              icon: Icons.search,
+            ),
             NotesListView(),
           ],
         ),
