@@ -22,7 +22,7 @@ class EditNoteView extends StatelessWidget {
                 icon: Icons.check,
               ),
               SizedBox(
-                height: 16,
+                height: 32,
               ),
               CustomTextField(
                 hintText: 'Title',
