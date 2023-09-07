@@ -1,5 +1,8 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubit/Add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
@@ -25,6 +28,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
   @override
   Widget build(BuildContext context) {
     var Cubit = BlocProvider.of<AddNoteCubit>(context);
+
+    // String dateTime = DateFormat('hh:mm a MM,dd yyyy').format(DateTime.now());
+
+    String formattedDate = DateFormat.yMMMMd('en_US').format(DateTime.now());
 
     return Form(
       key: formKey,
@@ -61,7 +68,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title: title!,
                       subTitle: subTitle!,
                       color: kPrimaryColor.value,
-                      dateTime: DateTime.now().toString(),
+                      dateTime: formattedDate,
                     );
 
                     Cubit.addNote(noteModel);
