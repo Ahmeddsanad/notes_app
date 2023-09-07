@@ -25,7 +25,7 @@ class NotesListView extends StatelessWidget {
                   vertical: 4.0,
                 ),
                 child: NoteItem(
-                  noteModel: notes[index],
+                  note: notes[index],
                 ),
               );
             },
