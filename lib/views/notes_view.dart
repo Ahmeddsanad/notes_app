@@ -12,7 +12,7 @@ class NotesView extends StatelessWidget {
     return BlocProvider(
       create: (context) => NotesCubit(),
       child: Scaffold(
-        body: NewsViewBody(),
+        body: const NewsViewBody(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
