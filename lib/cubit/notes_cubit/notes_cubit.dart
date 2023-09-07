@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:bloc/bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meta/meta.dart';
@@ -14,5 +16,6 @@ class NotesCubit extends Cubit<NotesState> {
   FetchAllNotes() {
     var NotesBox = Hive.box<NoteModel>(kNotesBox);
     notes = NotesBox.values.toList();
+    emit(NotesSuccess());
   }
 }
