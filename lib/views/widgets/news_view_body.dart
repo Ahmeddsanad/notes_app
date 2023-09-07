@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/custom_app_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/views/widgets/custom_note_item.dart';
 import 'package:notes_app/views/widgets/notes_list_view.dart';
 
-class NewsViewBody extends StatelessWidget {
+class NewsViewBody extends StatefulWidget {
   const NewsViewBody({
     super.key,
   });
+
+  @override
+  State<NewsViewBody> createState() => _NewsViewBodyState();
+}
+
+class _NewsViewBodyState extends State<NewsViewBody> {
+  @override
+  void initState() {
+    BlocProvider.of<NotesCubit>(context).FetchAllNotes();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
