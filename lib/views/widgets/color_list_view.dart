@@ -13,16 +13,6 @@ class ColorListView extends StatefulWidget {
 class _ColorListViewState extends State<ColorListView> {
   int currentIndex = 0;
 
-  List<Color> colors = const [
-    Color(0xFF53E9D4),
-    Color(0xFFF68016),
-    Color(0xFFF02C77),
-    Color(0xFF870EDF),
-    Color(0xFF75FD1E),
-    Color(0xFFF3FD00),
-    Color(0xFF00C0DF),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -34,15 +24,15 @@ class _ColorListViewState extends State<ColorListView> {
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
             currentIndex = index;
-            BlocProvider.of<AddNoteCubit>(context).color = colors[index];
+            BlocProvider.of<AddNoteCubit>(context).color = kColors[index];
             setState(() {});
           },
           child: ColorItem(
             isActive: currentIndex == index,
-            color: colors[index],
+            color: kColors[index],
           ),
         ),
-        itemCount: colors.length,
+        itemCount: kColors.length,
         separatorBuilder: (context, index) => const SizedBox(
           width: 6,
         ),
